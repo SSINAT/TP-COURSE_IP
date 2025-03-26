@@ -2,42 +2,43 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 
-
-// done for categories controllers
 class CategoryController extends Controller
 {
-    //
-
-    public function getCategories(){
-        return ["message" => "Getting list of categories"];
+    public function getCategories() {
+        return Category::all();
     }
 
+    public function getCategory($categoryId) {
+        return Category::find($categoryId);
+    }
 
-    public function createCategory()
-     {
-         return ["message" => "Creating a new category"];
-     }
- 
- 
-     // Get /api/categories/{categoryId}
- 
-     public function getCategory($categoryId)
-     {
-         return ["message" => "Getting a category base on given $categoryId"];
-     }
- 
-     // Patch /api/categories/{categoryId}
-     public function updateCategory($categoryId)
-     {
-         return ["message" => "Updating a category base on given $categoryId"];
-     }
- 
- 
-     /// Delete /api/categories/{categoryId}
-     public function deleteCategory($categoryId)
-     {
-         return ["message" => "Deleting a category base on given $categoryId"];
-     }
+    public function createCategory(Request $request) {
+        $category = Category::create([
+            'name' => $request->name,
+        ]);
+        return $category;
+    }
+
+    public function updateCategory(Request $request, $categoryId) {
+        $category = Category::find($categoryId);
+        $category->name =$request->name;
+        $category->save();
+
+        return $category;
+    }
+
+    public function deleteCategory($categoryId) {
+        $category = Category::find($categoryId);
+        $category->delete();
+        return $category;
+    }
+
+    public function getProductsByCategory($categoryId) {
+        $products = Product::where('category_id', str($categoryId))->get();
+        return $products;
+    }
 }
