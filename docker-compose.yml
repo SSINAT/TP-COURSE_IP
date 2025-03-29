@@ -10,7 +10,7 @@ services:
       - laravel
   webserver:
     image: nginx:latest
-    container_name: nginx_servertp6
+    container_name: nginx_server
     ports:
       - "8100:80"
     volumes:
@@ -20,7 +20,7 @@ services:
       - laravel
   db:
     image: mysql:8.0
-    container_name: mysql_dbtp6
+    container_name: mysql_db
     ports:
       - "3307:3306"
     environment:

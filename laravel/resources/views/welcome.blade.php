@@ -1,22 +1,20 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-<style>
+  <style>
     .container {
-        margin: 50px auto;
-        text-align: center;
+      margin: 50px auto;
+      text-align: center;
     }
-</style>
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h3>
-            Welcome To Ecommerce backend server
-        </h3>
-        <h5>
-            Powered by Laravel v.10 <br>
-            Version 0.1
-        </h5>
-    </div>
+  <div class="container">
+    <h3>Welcome to Ecommerce backend server</h3>
+    <h5>
+      Powered by Laravel v. 10 <br/>
+      Version 0.1
+    </h5>
+  </div>
 </body>
 </html>

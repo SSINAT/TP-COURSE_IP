@@ -1,0 +1,45 @@
+[90m= [39m[34;4mIlluminate\Database\Eloquent\Collection[39;24m {#6242
+    [34mall[39m: [
+      [34;4mApp\Models\Customer[39;24m {#6241
+        [34mid[39m: [35m1[39m,
+        [34mname[39m: "[32mJohn Doe[39m",
+        [34memail[39m: "[32mjohn.doe@example.com[39m",
+        [34mphone[39m: "[32m123-456-7890[39m",
+        [34maddress[39m: "[32m1234 Elm Street[39m",
+        [34mcreated_at[39m: "[32m2025-03-28 01:48:33[39m",
+        [34mupdated_at[39m: "[32m2025-03-28 01:48:33[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Customer[39;24m {#6240
+        [34mid[39m: [35m2[39m,
+        [34mname[39m: "[32mJohn Doe[39m",
+        [34memail[39m: "[32mjohn@example.com[39m",
+        [34mphone[39m: "[32m1234567890[39m",
+        [34maddress[39m: [36mnull[39m,
+        [34mcreated_at[39m: "[32m2025-03-28 03:56:57[39m",
+        [34mupdated_at[39m: "[32m2025-03-28 03:56:57[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Customer[39;24m {#6239
+        [34mid[39m: [35m3[39m,
+        [34mname[39m: "[32mJohn Doe[39m",
+        [34memail[39m: "[32mjohn.doe@example.com[39m",
+        [34mphone[39m: "[32m123-456-7890[39m",
+        [34maddress[39m: "[32m1234 Elm Street[39m",
+        [34mcreated_at[39m: "[32m2025-03-28 04:51:23[39m",
+        [34mupdated_at[39m: "[32m2025-03-28 04:51:23[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+      [34;4mApp\Models\Customer[39;24m {#6238
+        [34mid[39m: [35m4[39m,
+        [34mname[39m: "[32mJohn Doe[39m",
+        [34memail[39m: "[32mjohn.doe@example.com[39m",
+        [34mphone[39m: "[32m123-456-7890[39m",
+        [34maddress[39m: "[32m1234 Elm Street[39m",
+        [34mcreated_at[39m: "[32m2025-03-28 04:53:37[39m",
+        [34mupdated_at[39m: "[32m2025-03-28 04:53:37[39m",
+        [34mdeleted_at[39m: [36mnull[39m,
+      },
+    ],
+  }
+

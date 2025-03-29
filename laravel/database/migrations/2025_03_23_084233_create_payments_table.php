@@ -6,9 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 return new class extends Migration
 {
-    /**
-     * Run the migrations.
-     */
+
     public function up(): void
     {
         Schema::create('payments', function (Blueprint $table) {
@@ -17,7 +15,7 @@ return new class extends Migration
             $table->decimal('amount', 10, 2);
             $table->bigInteger('order_id')->unsigned();
             $table->bigInteger('customer_id')->unsigned();
-            $table->timestamp('payment_date');
+            $table->timestamp('payment_date')->useCurrent();
             $table->timestamps();
 
             $table->foreign('order_id')->references('id')->on('orders');
@@ -25,9 +23,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+
     public function down(): void
     {
         Schema::dropIfExists('payments');

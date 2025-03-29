@@ -29,7 +29,7 @@ return new class extends Migration
             $table->softDeletes(); 
         });
 
-        Schema::table('order_product', function (Blueprint $table) {
+        Schema::table('order_products', function (Blueprint $table) {
             $table->softDeletes(); 
         });
 
@@ -42,9 +42,7 @@ return new class extends Migration
         });
     }
 
-    /**
-     * Reverse the migrations.
-     */
+ 
     public function down(): void
     {
         Schema::table('orders', function (Blueprint $table) {

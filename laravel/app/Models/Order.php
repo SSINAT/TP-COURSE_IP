@@ -27,7 +27,7 @@ class Order extends Model
 
     protected function orderDate(): Attribute {
         return Attribute::make(
-            // Mutator: Convert input format to MySQL format before saving
+           
             set: fn($value) => Carbon::createFromFormat('d/m/Y H:i:s', $value)->format('Y-m-d H:i:s'),
 
             // Accessor: Convert database format to user format when retrieving
