@@ -13,7 +13,7 @@ return [
     |
     */
 
-    'default' => env('FILESYSTEM_DISK', 'public'),
+    'default' => env('FILESYSTEM_DISK', 'local'),
 
     /*
     |--------------------------------------------------------------------------
@@ -60,18 +60,15 @@ return [
             'report' => false,
         ],
 
-        'minio' => [
+         'minio' => [
             'driver' => 's3',
-            'key' => env('MINIO_ACCESS_KEY_ID', 'admin'), // Default to 'admin' if not set
-            'secret' => env('MINIO_SECRET_ACCESS_KEY', 'password123'), // Default to 'password123'
+            'key' => env('MINIO_ACCESS_KEY_ID'),
+            'secret' => env('MINIO_SECRET_ACCESS_KEY'),
             'region' => env('MINIO_REGION', 'us-east-1'),
             'bucket' => env('MINIO_BUCKET'),
-            'endpoint' => env('MINIO_ENDPOINT', 'http://minio:9000'),
-            'use_path_style_endpoint' => true, // Required for MinIO
-            'throw' => false,
-            'visibility' => 'public', // Optional: set default visibility
-            'url' => env('MINIO_URL', null), // Optional: public URL if using MinIO behind a proxy
-    ],
+            'endpoint' => env('MINIO_ENDPOINT'),
+            'use_path_style_endpoint' => true,
+        ],
 
     ],
 
