@@ -1,0 +1,81 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+type HotelBooking {
+  id: ID!
+  start_date: DateTime!
+  end_date: DateTime!
+  hotel_id: Int!
+  is_checked_in: Boolean!
+  price: Int!
+}
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type Book {
+  id: ID!
+  title: String!
+  author: String!
+  price: Int!
+}
+
+type Hotel {
+  id: Int!
+  name: String!
+  address: String!
+  phone: String!
+}
+
+type Query {
+  getAllBooks: [Book!]!
+  getBookById(id: Int!): Book
+  getAllBookings: [HotelBooking!]!
+  getBookingsByDateRange(start_date: DateTime!, end_date: DateTime!): [HotelBooking!]!
+  hotels: [Hotel!]!
+  hotel(id: Int!): Hotel!
+}
+
+type Mutation {
+  addBook(title: String!, price: Int!): Book!
+  updateBook(id: Int!, title: String!, price: Int!): Book!
+  deleteBook(id: Int!): Boolean!
+  createBooking(input: CreateBookingInput!): HotelBooking!
+  updateBooking(input: UpdateBookingInput!): HotelBooking!
+  cancelBooking(id: Int!): Boolean!
+  checkInBooking(id: Int!): HotelBooking!
+  createHotel(createHotelInput: CreateHotelInput!): Hotel!
+  updateHotel(updateHotelInput: UpdateHotelInput!): Hotel!
+  removeHotel(id: Int!): Boolean!
+}
+
+input CreateBookingInput {
+  start_date: DateTime!
+  end_date: DateTime!
+  hotel_id: Int!
+  price: Int!
+}
+
+input UpdateBookingInput {
+  start_date: DateTime
+  end_date: DateTime
+  hotel_id: Int
+  price: Int
+  id: Int!
+}
+
+input CreateHotelInput {
+  name: String!
+  address: String!
+  phone: String!
+}
+
+input UpdateHotelInput {
+  name: String
+  address: String
+  phone: String
+  id: Int!
+}
